@@ -14,7 +14,10 @@ module.exports = {
         const member = message.member;
 
         let serverChannels = message.guild.channels;
-        serverChannels = tools.sortChannelsByName(serverChannels);
+
+        // serverChannels = tools.sortChannelsByName(serverChannels);
+        serverChannels = tools.sortChannelsByServerOrder(serverChannels);
+
         let channels = tools.getVoiceChannels(serverChannels);
 
         // logger.displayVoiceChannels(serverChannels);

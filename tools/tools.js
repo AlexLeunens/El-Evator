@@ -6,6 +6,14 @@ function sortChannelsByName(serverChannels) {
     return result;
 }
 
+function sortChannelsByServerOrder(serverChannels) {
+    let result = serverChannels.sort(function (a, b) {
+        return (a.calculatedPosition) - (b.calculatedPosition);
+    });
+
+    return result;
+}
+
 function getVoiceChannels(serverChannels) {
     let channels = new Array();
 
@@ -21,4 +29,5 @@ function getVoiceChannels(serverChannels) {
 module.exports = {
     sortChannelsByName,
     getVoiceChannels,
+    sortChannelsByServerOrder
 }
